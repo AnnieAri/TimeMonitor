@@ -48,7 +48,7 @@ class TimeMonitor: UIView {
         secondViewSD = NumberView(frame: CGRect(x: 550, y: 160, width: 50, height: 80))
         self.addSubview(secondViewSD)
         
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     @objc func updateTime(){
@@ -57,8 +57,7 @@ class TimeMonitor: UIView {
                 view.Number = number
             }
         }
-        firstColon.isHidden = !firstColon.isHidden
-        secColon.isHidden = !secColon.isHidden
+        
         let date = Date()
         let dayTime = (Int(date.timeIntervalSince1970) + (8 * 3600)) % (3600 * 24)
         Debug.Log(dayTime)
@@ -73,7 +72,10 @@ class TimeMonitor: UIView {
         let second = dayTime % 3600 % 60
         let secondtd = second / 10  //秒十分位
         let secondsd = second % 10 //秒个位
-        
+        if secondViewSD.Number != secondsd {
+            firstColon.isHidden = !firstColon.isHidden
+            secColon.isHidden = !secColon.isHidden
+        }
         inputNumber(hourViewTD, hourtd)
         inputNumber(hourViewSD, hoursd)
         inputNumber(minutViewTD, minuttd)
