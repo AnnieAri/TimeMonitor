@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     var monitor :TimeMonitor!
-    
+//    let settingTableView = 
+    lazy var settingTableVC: SettingTableViewController = {
+        let settingTableVC = SettingTableViewController();
+        return settingTableVC
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true;
@@ -20,8 +24,39 @@ class ViewController: UIViewController {
         let monitor = TimeMonitor(frame: view.bounds)
         self.monitor = monitor
         view.addSubview(monitor)
+        let leftEdgeGes = UIScreenEdgePanGestureRecognizer.init(target: self, action: #selector(setting))
+        leftEdgeGes.edges = .left
+        monitor.addGestureRecognizer(leftEdgeGes)
+        settingTableVC.view.frame = CGRect(x: -200, y: 0, width: 200, height: UIScreen.main.bounds.height)
+        addChildViewController(settingTableVC)
+        view.addSubview(settingTableVC.view)
     }
-
+    func setting(_ ges:UIPanGestureRecognizer){
+        Debug.Log("pan\(ges.location(in: ges.view!))")
+        settingTableVC.view.frame.origin.x = ges.location(in: ges.view!).x - 200
+        if settingTableVC.view.frame.origin.x > 0 {
+            settingTableVC.view.frame.origin.x = 0
+        }
+        if ges.state == .ended {
+            Debug.Log("拖动结束")
+            UIView.animate(withDuration: 0.25, animations: { 
+                if self.settingTableVC.view.frame.origin.x > -100 {
+                    self.settingTableVC.view.frame.origin.x = 0
+                } else {
+                    self.settingTableVC.view.frame.origin.x  = -200
+                }
+            }, completion: nil)
+        }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if settingTableVC.view.frame.origin.x == 0 {
+            UIView.animate(withDuration: 0.25, animations: { 
+                self.settingTableVC.view.frame.origin.x = -200
+            }, completion: { (completion) in
+                Debug.Log(completion)
+            })
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

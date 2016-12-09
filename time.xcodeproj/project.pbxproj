@@ -7,24 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		481FC04E1DF94130009D37EA /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FC04D1DF94130009D37EA /* Debug.swift */; };
-		481FC0551DF96AC1009D37EA /* TimeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FC0541DF96AC1009D37EA /* TimeMonitor.swift */; };
-		481FC0571DF96F88009D37EA /* ColonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FC0561DF96F88009D37EA /* ColonView.swift */; };
-		481FC0591DF96FA5009D37EA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FC0581DF96FA5009D37EA /* Const.swift */; };
 		48AF1E5E1DF577F700BBD0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF1E5D1DF577F700BBD0D4 /* AppDelegate.swift */; };
 		48AF1E601DF577F700BBD0D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF1E5F1DF577F700BBD0D4 /* ViewController.swift */; };
 		48AF1E631DF577F700BBD0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AF1E611DF577F700BBD0D4 /* Main.storyboard */; };
 		48AF1E651DF577F700BBD0D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AF1E641DF577F700BBD0D4 /* Assets.xcassets */; };
 		48AF1E681DF577F700BBD0D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AF1E661DF577F700BBD0D4 /* LaunchScreen.storyboard */; };
-		48AF1E701DF57A6200BBD0D4 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF1E6F1DF57A6200BBD0D4 /* NumberView.swift */; };
-		48AF1E721DF57ABC00BBD0D4 /* NumberViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF1E711DF57ABC00BBD0D4 /* NumberViewComponents.swift */; };
+		48B2FC301DFAA86100DA1300 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC271DFAA86100DA1300 /* SettingTableViewController.swift */; };
+		48B2FC311DFAA86100DA1300 /* ColonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC291DFAA86100DA1300 /* ColonView.swift */; };
+		48B2FC321DFAA86100DA1300 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC2A1DFAA86100DA1300 /* NumberView.swift */; };
+		48B2FC331DFAA86100DA1300 /* NumberViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC2B1DFAA86100DA1300 /* NumberViewComponents.swift */; };
+		48B2FC341DFAA86100DA1300 /* TimeMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC2C1DFAA86100DA1300 /* TimeMonitor.swift */; };
+		48B2FC351DFAA86100DA1300 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC2E1DFAA86100DA1300 /* Const.swift */; };
+		48B2FC361DFAA86100DA1300 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2FC2F1DFAA86100DA1300 /* Debug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		481FC04D1DF94130009D37EA /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
-		481FC0541DF96AC1009D37EA /* TimeMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMonitor.swift; sourceTree = "<group>"; };
-		481FC0561DF96F88009D37EA /* ColonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonView.swift; sourceTree = "<group>"; };
-		481FC0581DF96FA5009D37EA /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		48AF1E5A1DF577F700BBD0D4 /* time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AF1E5D1DF577F700BBD0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AF1E5F1DF577F700BBD0D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,8 +29,13 @@
 		48AF1E641DF577F700BBD0D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48AF1E671DF577F700BBD0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48AF1E691DF577F700BBD0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48AF1E6F1DF57A6200BBD0D4 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
-		48AF1E711DF57ABC00BBD0D4 /* NumberViewComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewComponents.swift; sourceTree = "<group>"; };
+		48B2FC271DFAA86100DA1300 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		48B2FC291DFAA86100DA1300 /* ColonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonView.swift; sourceTree = "<group>"; };
+		48B2FC2A1DFAA86100DA1300 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		48B2FC2B1DFAA86100DA1300 /* NumberViewComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewComponents.swift; sourceTree = "<group>"; };
+		48B2FC2C1DFAA86100DA1300 /* TimeMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMonitor.swift; sourceTree = "<group>"; };
+		48B2FC2E1DFAA86100DA1300 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		48B2FC2F1DFAA86100DA1300 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,20 +68,37 @@
 		48AF1E5C1DF577F700BBD0D4 /* time */ = {
 			isa = PBXGroup;
 			children = (
-				481FC04D1DF94130009D37EA /* Debug.swift */,
-				481FC0541DF96AC1009D37EA /* TimeMonitor.swift */,
-				481FC0561DF96F88009D37EA /* ColonView.swift */,
+				48B2FC271DFAA86100DA1300 /* SettingTableViewController.swift */,
+				48B2FC281DFAA86100DA1300 /* TimeMonitor */,
+				48B2FC2D1DFAA86100DA1300 /* Tools */,
 				48AF1E5D1DF577F700BBD0D4 /* AppDelegate.swift */,
 				48AF1E5F1DF577F700BBD0D4 /* ViewController.swift */,
 				48AF1E611DF577F700BBD0D4 /* Main.storyboard */,
 				48AF1E641DF577F700BBD0D4 /* Assets.xcassets */,
 				48AF1E661DF577F700BBD0D4 /* LaunchScreen.storyboard */,
 				48AF1E691DF577F700BBD0D4 /* Info.plist */,
-				48AF1E6F1DF57A6200BBD0D4 /* NumberView.swift */,
-				48AF1E711DF57ABC00BBD0D4 /* NumberViewComponents.swift */,
-				481FC0581DF96FA5009D37EA /* Const.swift */,
 			);
 			path = time;
+			sourceTree = "<group>";
+		};
+		48B2FC281DFAA86100DA1300 /* TimeMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				48B2FC291DFAA86100DA1300 /* ColonView.swift */,
+				48B2FC2B1DFAA86100DA1300 /* NumberViewComponents.swift */,
+				48B2FC2A1DFAA86100DA1300 /* NumberView.swift */,
+				48B2FC2C1DFAA86100DA1300 /* TimeMonitor.swift */,
+			);
+			path = TimeMonitor;
+			sourceTree = "<group>";
+		};
+		48B2FC2D1DFAA86100DA1300 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				48B2FC2E1DFAA86100DA1300 /* Const.swift */,
+				48B2FC2F1DFAA86100DA1300 /* Debug.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,14 +175,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B2FC311DFAA86100DA1300 /* ColonView.swift in Sources */,
+				48B2FC341DFAA86100DA1300 /* TimeMonitor.swift in Sources */,
+				48B2FC301DFAA86100DA1300 /* SettingTableViewController.swift in Sources */,
 				48AF1E601DF577F700BBD0D4 /* ViewController.swift in Sources */,
-				481FC0551DF96AC1009D37EA /* TimeMonitor.swift in Sources */,
-				481FC04E1DF94130009D37EA /* Debug.swift in Sources */,
+				48B2FC361DFAA86100DA1300 /* Debug.swift in Sources */,
+				48B2FC321DFAA86100DA1300 /* NumberView.swift in Sources */,
+				48B2FC351DFAA86100DA1300 /* Const.swift in Sources */,
 				48AF1E5E1DF577F700BBD0D4 /* AppDelegate.swift in Sources */,
-				48AF1E701DF57A6200BBD0D4 /* NumberView.swift in Sources */,
-				481FC0591DF96FA5009D37EA /* Const.swift in Sources */,
-				48AF1E721DF57ABC00BBD0D4 /* NumberViewComponents.swift in Sources */,
-				481FC0571DF96F88009D37EA /* ColonView.swift in Sources */,
+				48B2FC331DFAA86100DA1300 /* NumberViewComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

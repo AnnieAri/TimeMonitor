@@ -50,7 +50,6 @@ class TimeMonitor: UIView {
         secColon = ColonView()
         secondViewTD = NumberView()
         secondViewSD = NumberView()
-        
         self.addSubview(hourViewTD)
         self.addSubview(hourViewSD)
         self.addSubview(firstColon)
@@ -113,7 +112,6 @@ class TimeMonitor: UIView {
         
         let date = Date()
         let dayTime = (Int(date.timeIntervalSince1970) + (8 * 3600)) % (3600 * 24)
-        Debug.Log(dayTime)
         let hour = dayTime / 3600
         let hourtd = hour / 10        //时十分位
         let hoursd = hour % 10      //时个位

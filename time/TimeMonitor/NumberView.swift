@@ -9,6 +9,16 @@
 import UIKit
 
 class NumberView: UIView {
+    var numberColor :UIColor = Ari_DefaultColor {
+        didSet {
+            resetNumberViewWithNumber(Number!)
+        }
+    }
+    var shadowNumberColor :UIColor = Ari_DefaultShadowColor {
+        didSet {
+            resetNumberViewWithNumber(Number!)
+        }
+    }
     
     var Number: Int? {
         didSet {
@@ -36,6 +46,11 @@ class NumberView: UIView {
         
         super.init(frame: frame)
         setupUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(chageColor), name: NSNotification.Name(rawValue: Ari_changeNumberColorNotification), object: nil)
+    
+    }
+    @objc func chageColor(_ noti:Notification){
+        numberColor = noti.userInfo![Ari_changeNumberColorKey] as! UIColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,11 +96,11 @@ class NumberView: UIView {
     private func resetNumberViewWithNumber(_ number: Int){
         func setComponentColorWithPosition(_ position:Int...){
             for view in componentsArr! {
-              view.componentsColor = Ari_DefaultColor
+              view.componentsColor = numberColor
             }
 
             position.forEach { (position) in
-                componentsArr![position].componentsColor = Ari_DefaultShadowColor
+                componentsArr![position].componentsColor = shadowNumberColor
             }
         }
         switch number {
