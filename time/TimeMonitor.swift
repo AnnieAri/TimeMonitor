@@ -60,7 +60,7 @@ class TimeMonitor: UIView {
         firstColon.isHidden = !firstColon.isHidden
         secColon.isHidden = !secColon.isHidden
         let date = Date()
-        let dayTime = (Int(date.timeIntervalSince1970)) % (3600 * 24) + (8 * 3600)
+        let dayTime = (Int(date.timeIntervalSince1970) + (8 * 3600)) % (3600 * 24)
         Debug.Log(dayTime)
         let hour = dayTime / 3600
         let hourtd = hour / 10        //时十分位
