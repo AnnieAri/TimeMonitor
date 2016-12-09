@@ -60,7 +60,7 @@ class NumberViewComponents: UIView {
 //        let singleMargin = margin
         let doubleMargin = margin * 2
         switch  position {
-        case Position.top:
+        case .top:
             point1 = CGPoint(x: 0 + doubleMargin, y: margin)
             point2 = CGPoint(x: rect.width - doubleMargin, y: margin)
             point3 = CGPoint(x: rect.width - rect.height , y: rect.height - margin)
@@ -68,7 +68,7 @@ class NumberViewComponents: UIView {
             point5 = point4
             point6 = point4
             
-        case Position.middle:
+        case .middle:
             lineWidth = rect.height - doubleMargin
             point1 = CGPoint(x: rect.height, y: margin)
             point2 = CGPoint(x: rect.width - rect.height, y: margin)
@@ -77,7 +77,7 @@ class NumberViewComponents: UIView {
             point5 = CGPoint(x: rect.height, y:  rect.height - margin)
             point6 = CGPoint(x: rect.height - lineWidth! * 0.5, y: rect.height * 0.5)
             
-        case Position.bottom:
+        case .bottom:
             point1 = CGPoint(x: doubleMargin, y: rect.height - margin)
             point2 = CGPoint(x: rect.width - doubleMargin, y: rect.height - margin)
             point3 = CGPoint(x: rect.width - rect.height , y: margin)
@@ -85,7 +85,7 @@ class NumberViewComponents: UIView {
             point5 = point4
             point6 = point4
             
-        case Position.leftTop:
+        case .leftTop:
             lineWidth = rect.width - doubleMargin
             point1 = CGPoint(x: 0 + margin, y: doubleMargin)
             point2 = CGPoint(x: 0 + margin, y: rect.height - margin - lineWidth! * 0.4)
@@ -103,7 +103,7 @@ class NumberViewComponents: UIView {
             point5 = CGPoint(x: rect.width - margin, y: rect.height - doubleMargin - lineWidth!)
             point6 = point5
             
-        case Position.rightTop:
+        case .rightTop:
             lineWidth = rect.width - doubleMargin
             point1 = CGPoint(x: rect.width - margin, y: doubleMargin)
             point2 = CGPoint(x: rect.width - margin, y: rect.height - margin - lineWidth! * 0.4)
@@ -112,7 +112,7 @@ class NumberViewComponents: UIView {
             point5 = CGPoint(x: margin, y: lineWidth! + doubleMargin)
             point6 = point5
             
-        case Position.rightBottom:
+        case .rightBottom:
             lineWidth = rect.width - doubleMargin
             point1 = CGPoint(x: rect.width - margin, y: rect.height - doubleMargin)
             point2 = CGPoint(x: rect.width - margin, y: lineWidth! * 0.4 + margin)
