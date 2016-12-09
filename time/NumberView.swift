@@ -17,9 +17,13 @@ class NumberView: UIView {
             }
         }
     }
-    
+    override var frame: CGRect {
+        didSet {
+            viewSide = frame.size.width * 0.2
+        }
+    }
     /// 每个小组件的宽度
-    private var viewSide: CGFloat
+    private var viewSide: CGFloat = 0
     private var topView :NumberViewComponents!
     private var bottomView :NumberViewComponents!
     private var leftTopView :NumberViewComponents!
@@ -29,7 +33,7 @@ class NumberView: UIView {
     private var middleView :NumberViewComponents!
     private var componentsArr: [NumberViewComponents]?
     override init(frame: CGRect) {
-        viewSide = frame.size.width * 0.2
+        
         super.init(frame: frame)
         setupUI()
     }
@@ -63,13 +67,16 @@ class NumberView: UIView {
         self.addSubview(rightBottomView)
         componentsArr = [topView,middleView,bottomView,leftTopView,leftBottomView,rightTopView,rightBottomView]
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func layoutSubviews() {
+         super.layoutSubviews()
+        topView.frame = CGRect(x: 0, y: 0, width:self.bounds.width, height: viewSide)
+        middleView.frame = CGRect(x: 0, y: (self.bounds.height - viewSide) * 0.5, width:self.bounds.width, height: viewSide)
+        bottomView.frame = CGRect(x: 0, y: self.bounds.height - viewSide, width:self.bounds.width, height: viewSide)
+        leftTopView.frame = CGRect(x: 0, y: 0, width: viewSide, height: (self.bounds.height) * 0.5)
+        leftBottomView.frame = CGRect(x: 0, y: (self.bounds.height) * 0.5, width: viewSide, height: (self.bounds.height) * 0.5)
+        rightTopView.frame = CGRect(x: self.bounds.width - viewSide, y: 0, width: viewSide, height: (self.bounds.height) * 0.5)
+        rightBottomView.frame =  CGRect(x: self.bounds.width - viewSide, y: (self.bounds.height) * 0.5, width: viewSide, height: (self.bounds.height) * 0.5)
     }
-    */
 // MARK: - 数字设置
     private func resetNumberViewWithNumber(_ number: Int){
         func setComponentColorWithPosition(_ position:Int...){

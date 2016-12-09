@@ -18,20 +18,24 @@ enum Position {
 }
 class NumberViewComponents: UIView {
     private var position :Position?
-    var margin :CGFloat
+    var margin :CGFloat = 0
     var componentsColor: UIColor?  {
         didSet {
             self.setNeedsDisplay()
         }
     }
-    
+    override var frame: CGRect {
+        didSet {
+            let side = frame.size.width <  frame.size.height  ? frame.size.width : frame.size.height
+            margin = side * 0.1
+            setNeedsDisplay()
+        }
+    }
     convenience init?(frame: CGRect , _ position:Position) {
         self.init(frame: frame)
         self.position = position
     }
     override init(frame: CGRect) {
-        let side = frame.size.width <  frame.size.height  ? frame.size.width : frame.size.height
-        margin = side * 0.1
         super.init(frame: frame)
         setupUI()
     }

@@ -22,7 +22,6 @@ class TimeMonitor: UIView {
     var timer: Timer!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configure()
         setupUI()
     }
     
@@ -43,6 +42,28 @@ class TimeMonitor: UIView {
     }
     private func setupUI(){
         backgroundColor = UIColor.black
+        hourViewTD = NumberView()
+        hourViewSD = NumberView()
+        firstColon = ColonView()
+        minutViewTD = NumberView()
+        minutViewSD = NumberView()
+        secColon = ColonView()
+        secondViewTD = NumberView()
+        secondViewSD = NumberView()
+        
+        self.addSubview(hourViewTD)
+        self.addSubview(hourViewSD)
+        self.addSubview(firstColon)
+        self.addSubview(minutViewTD)
+        self.addSubview(minutViewSD)
+        self.addSubview(secColon)
+        self.addSubview(secondViewTD)
+        self.addSubview(secondViewSD)
+        self.updateTime()
+        timer = Timer.init(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer, forMode: .commonModes)
+    }
+    private func resetSubviewsFrame(){
         //620.0  240.0
         //frame.width  frame.height
         let bigerViewWidth = ratioX * 100
@@ -52,41 +73,35 @@ class TimeMonitor: UIView {
         let bigerHeight = ratioY * 200
         let smallerHeight = bigerHeight * 0.5
         
-        hourViewTD = NumberView(frame: CGRect(x: marginX, y: marginY, width: bigerViewWidth, height: bigerHeight))
-        self.addSubview(hourViewTD)
+        hourViewTD.frame = CGRect(x: marginX, y: marginY, width: bigerViewWidth, height: bigerHeight)
         
         let hourViewSDX = marginX + bigerViewWidth + numberMargin
-        hourViewSD = NumberView(frame: CGRect(x: hourViewSDX, y: marginY, width: bigerViewWidth, height: bigerHeight))
-        self.addSubview(hourViewSD)
+        hourViewSD.frame = CGRect(x: hourViewSDX, y: marginY, width: bigerViewWidth, height: bigerHeight)
         
         let firstColonX = hourViewSDX + bigerViewWidth
-        firstColon = ColonView(frame: CGRect(x: firstColonX, y: marginY, width: bigerColonWidth, height: bigerHeight))
-        self.addSubview(firstColon)
+        firstColon.frame = CGRect(x: firstColonX, y: marginY, width: bigerColonWidth, height: bigerHeight)
         
         let minutViewTDX = firstColonX + bigerColonWidth
-        minutViewTD = NumberView(frame: CGRect(x: minutViewTDX, y: marginY, width: bigerViewWidth, height: bigerHeight))
-        self.addSubview(minutViewTD)
+        minutViewTD.frame = CGRect(x: minutViewTDX, y: marginY, width: bigerViewWidth, height: bigerHeight)
         
         let minutViewSDX = minutViewTDX + bigerViewWidth + numberMargin
-        minutViewSD = NumberView(frame: CGRect(x: minutViewSDX, y: marginY, width: bigerViewWidth, height: bigerHeight))
-        self.addSubview(minutViewSD)
+        minutViewSD.frame = CGRect(x: minutViewSDX, y: marginY, width: bigerViewWidth, height: bigerHeight)
         
         let smallerViewY = marginY + smallerHeight
         let secColonX = minutViewSDX + bigerViewWidth
-        secColon = ColonView(frame: CGRect(x: secColonX, y: smallerViewY , width: smallerColonWidth, height: smallerHeight))
-        self.addSubview(secColon)
+        secColon.frame =  CGRect(x: secColonX, y: smallerViewY , width: smallerColonWidth, height: smallerHeight)
         
         let secondViewTDX = secColonX + smallerColonWidth
-        secondViewTD = NumberView(frame: CGRect(x: secondViewTDX, y: smallerViewY, width: smallerViewWidth, height: smallerHeight))
-        self.addSubview(secondViewTD)
+        secondViewTD.frame = CGRect(x: secondViewTDX, y: smallerViewY, width: smallerViewWidth, height: smallerHeight)
         
-        let secondViewSDX = secondViewTDX + smallerViewWidth
-        secondViewSD = NumberView(frame: CGRect(x: secondViewSDX, y: smallerViewY, width: smallerViewWidth, height: smallerHeight))
-        self.addSubview(secondViewSD)
-        self.updateTime()
-//        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-        timer = Timer.init(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer, forMode: .commonModes)
+        let secondViewSDX = secondViewTDX + smallerViewWidth + numberMargin
+        secondViewSD.frame = CGRect(x: secondViewSDX, y: smallerViewY, width: smallerViewWidth, height: smallerHeight)
+        
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.configure()
+        self.resetSubviewsFrame()
     }
     
     @objc func updateTime(){
@@ -120,7 +135,7 @@ class TimeMonitor: UIView {
         inputNumber(minutViewSD, minutsd)
         inputNumber(secondViewTD, secondtd)
         inputNumber(secondViewSD, secondsd)
-       }
+    }
     override func removeFromSuperview() {
         timer.invalidate()
         timer = nil
