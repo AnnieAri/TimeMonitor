@@ -6,6 +6,6 @@ target 'time' do
   use_frameworks!
 
   # Pods for time
-pod 'BaiduMapKit' #百度地图SDK
+#pod 'BaiduMapKit' #百度地图SDK
 pod 'AFNetworking'
 end

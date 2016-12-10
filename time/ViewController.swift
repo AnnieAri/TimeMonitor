@@ -18,10 +18,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isIdleTimerDisabled = true;
+        
+         let bgImageView = UIImageView(image: UIImage(contentsOfFile: Bundle.main.path(forResource: "miku2", ofType: "jpg")!))
+        bgImageView.frame = view.bounds
+        view.addSubview(bgImageView)
 //        let numberView = NumberView(frame: CGRect(x: 20, y: 80, width: 100, height: 160))
 //        view.addSubview(numberView)
 //        numberView.Number = 8
         let monitor = TimeMonitor(frame: view.bounds)
+        monitor.isNeedBlackMask = true
+        monitor.maskAlpha = 0.2
         self.monitor = monitor
         view.addSubview(monitor)
         let leftEdgeGes = UIScreenEdgePanGestureRecognizer.init(target: self, action: #selector(setting))

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48AC19311DFBF20400C9E554 /* miku.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 48AC19301DFBF20400C9E554 /* miku.jpeg */; };
+		48AC19331DFBF49C00C9E554 /* miku2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48AC19321DFBF49C00C9E554 /* miku2.jpg */; };
 		48AF1E5E1DF577F700BBD0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF1E5D1DF577F700BBD0D4 /* AppDelegate.swift */; };
 		48AF1E601DF577F700BBD0D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF1E5F1DF577F700BBD0D4 /* ViewController.swift */; };
 		48AF1E631DF577F700BBD0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48AF1E611DF577F700BBD0D4 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48AC19301DFBF20400C9E554 /* miku.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = miku.jpeg; sourceTree = "<group>"; };
+		48AC19321DFBF49C00C9E554 /* miku2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = miku2.jpg; sourceTree = "<group>"; };
 		48AF1E5A1DF577F700BBD0D4 /* time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48AF1E5D1DF577F700BBD0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48AF1E5F1DF577F700BBD0D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 		48AF1E5C1DF577F700BBD0D4 /* time */ = {
 			isa = PBXGroup;
 			children = (
+				48AC19301DFBF20400C9E554 /* miku.jpeg */,
+				48AC19321DFBF49C00C9E554 /* miku2.jpg */,
 				48B2FC271DFAA86100DA1300 /* SettingTableViewController.swift */,
 				48B2FC281DFAA86100DA1300 /* TimeMonitor */,
 				48B2FC2D1DFAA86100DA1300 /* Tools */,
@@ -191,6 +197,8 @@
 			files = (
 				48AF1E681DF577F700BBD0D4 /* LaunchScreen.storyboard in Resources */,
 				48AF1E651DF577F700BBD0D4 /* Assets.xcassets in Resources */,
+				48AC19311DFBF20400C9E554 /* miku.jpeg in Resources */,
+				48AC19331DFBF49C00C9E554 /* miku2.jpg in Resources */,
 				48AF1E631DF577F700BBD0D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

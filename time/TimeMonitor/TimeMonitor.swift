@@ -10,6 +10,19 @@ import UIKit
 
 class TimeMonitor: UIView {
     
+    ///是否需要半透明黑色背景
+    var isNeedBlackMask: Bool = false {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    ///黑色背景透明度
+    var maskAlpha: CGFloat = 1 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     ///修改控件的颜色
     var numberColor :UIColor? {
         didSet {
@@ -47,7 +60,7 @@ class TimeMonitor: UIView {
         numberMargin = marginX * 0.5
     }
     private func setupUI(){
-        backgroundColor = UIColor.black
+        backgroundColor = UIColor.clear
         hourViewTD = NumberView()
         hourViewSD = NumberView()
         firstColon = ColonView()
@@ -117,16 +130,19 @@ class TimeMonitor: UIView {
         }
         
         let date = Date()
-        let dayTime = (Int(date.timeIntervalSince1970) + (8 * 3600)) % (3600 * 24)
-        let hour = dayTime / 3600
+        let calendar = Calendar.init(identifier: .gregorian)
+        Debug.Log(calendar)
+        let dateComponents = calendar.dateComponents([.year,.month,.day,.weekday,.hour,.minute,.second,.nanosecond], from: date)
+//        let dayTime = (Int(date.timeIntervalSince1970) + (8 * 3600)) % (3600 * 24)
+        let hour = dateComponents.hour!
         let hourtd = hour / 10        //时十分位
         let hoursd = hour % 10      //时个位
         
-        let minut = dayTime % 3600 / 60
+        let minut = dateComponents.minute!
         let minuttd = minut / 10  //分钟十分位
         let minutsd = minut % 10 //分钟个位
         
-        let second = dayTime % 3600 % 60
+        let second = dateComponents.second!
         let secondtd = second / 10  //秒十分位
         let secondsd = second % 10 //秒个位
         if secondViewSD.Number != secondsd {
@@ -144,5 +160,13 @@ class TimeMonitor: UIView {
         timer.invalidate()
         timer = nil
         super.removeFromSuperview()
+    }
+    override func draw(_ rect: CGRect) {
+        if !isNeedBlackMask {
+            return
+        }
+        let path = UIBezierPath(rect: rect)
+        UIColor.init(white: 0, alpha: maskAlpha).setFill()
+        path.fill()        
     }
 }

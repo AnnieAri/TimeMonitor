@@ -20,6 +20,7 @@ class ColonView: UIView {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = UIColor.clear
         NotificationCenter.default.addObserver(self, selector: #selector(chageColor), name: NSNotification.Name(rawValue: Ari_changeNumberColorNotification), object: nil)
     }
     @objc func chageColor(_ noti:Notification){

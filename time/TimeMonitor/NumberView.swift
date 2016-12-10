@@ -22,9 +22,7 @@ class NumberView: UIView {
     
     var Number: Int? {
         didSet {
-            if let num = Number {
-                resetNumberViewWithNumber(num)
-            }
+                resetNumberViewWithNumber(Number)
         }
     }
     override var frame: CGRect {
@@ -95,7 +93,7 @@ class NumberView: UIView {
         rightBottomView.frame =  CGRect(x: self.bounds.width - viewSide, y: (self.bounds.height) * 0.5, width: viewSide, height: (self.bounds.height) * 0.5)
     }
 // MARK: - 数字设置
-    private func resetNumberViewWithNumber(_ number: Int){
+    private func resetNumberViewWithNumber(_ number: Int?){
         func setComponentColorWithPosition(_ position:Int...){
             for view in componentsArr! {
               view.componentsColor = numberColor
@@ -105,7 +103,11 @@ class NumberView: UIView {
                 componentsArr![position].componentsColor = shadowNumberColor
             }
         }
-        switch number {
+        guard let num = number else {
+            setComponentColorWithPosition(0,2,3,4,5,6)
+            return
+        }
+        switch num {
         case 0:setComponentColorWithPosition(1)
         case 1:setComponentColorWithPosition(0,1,2,3,4)
         case 2: setComponentColorWithPosition(3,6)
