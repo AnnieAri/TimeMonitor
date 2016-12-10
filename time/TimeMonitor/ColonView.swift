@@ -25,6 +25,9 @@ class ColonView: UIView {
     @objc func chageColor(_ noti:Notification){
         color = noti.userInfo![Ari_changeNumberColorKey] as! UIColor
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

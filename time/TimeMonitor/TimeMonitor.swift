@@ -10,16 +10,22 @@ import UIKit
 
 class TimeMonitor: UIView {
     
+    ///修改控件的颜色
+    var numberColor :UIColor? {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Ari_changeNumberColorNotification), object: nil, userInfo: [Ari_changeNumberColorKey : numberColor ?? Ari_DefaultColor])
+        }
+    }
     
-    var hourViewTD:NumberView!
-    var hourViewSD:NumberView!
-    var minutViewTD:NumberView!
-    var minutViewSD:NumberView!
-    var secondViewTD:NumberView!
-    var secondViewSD:NumberView!
-    var firstColon:ColonView!
-    var secColon:ColonView!
-    var timer: Timer!
+    private var hourViewTD:NumberView!
+    private var hourViewSD:NumberView!
+    private var minutViewTD:NumberView!
+    private var minutViewSD:NumberView!
+    private var secondViewTD:NumberView!
+    private var secondViewSD:NumberView!
+    private var firstColon:ColonView!
+    private var secColon:ColonView!
+    private var timer: Timer!
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -103,7 +109,7 @@ class TimeMonitor: UIView {
         self.resetSubviewsFrame()
     }
     
-    @objc func updateTime(){
+    @objc private func updateTime(){
         func inputNumber(_ view:NumberView,_ number: Int){
             if view.Number != number{
                 view.Number = number

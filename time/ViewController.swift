@@ -30,6 +30,9 @@ class ViewController: UIViewController {
         settingTableVC.view.frame = CGRect(x: -200, y: 0, width: 200, height: UIScreen.main.bounds.height)
         addChildViewController(settingTableVC)
         view.addSubview(settingTableVC.view)
+        settingTableVC.clickChangeNumberColor = { [weak self](color) in
+            self?.monitor.numberColor = color
+        }
     }
     func setting(_ ges:UIPanGestureRecognizer){
         Debug.Log("pan\(ges.location(in: ges.view!))")

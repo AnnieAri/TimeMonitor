@@ -18,7 +18,7 @@ enum Position {
 }
 class NumberViewComponents: UIView {
     private var position :Position?
-    var margin :CGFloat = 0
+    private var margin :CGFloat = 0
     var componentsColor: UIColor?  {
         didSet {
             self.setNeedsDisplay()

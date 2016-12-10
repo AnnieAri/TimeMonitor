@@ -13,6 +13,8 @@ class SettingTableViewController: UITableViewController {
         let name = ["数字颜色","数字阴影颜色"];
         return name
     }()
+    //点击了更换颜色选项
+    var clickChangeNumberColor: ((_ color: UIColor)->())?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +58,8 @@ extension SettingTableViewController {
         Debug.Log(indexPath.row)
         if indexPath.row == 0 {
             let randomColor = UIColor.init(red: CGFloat(arc4random_uniform(255)) / 255, green: CGFloat(arc4random_uniform(255)) / 255, blue: CGFloat(arc4random_uniform(255)) / 255, alpha: 1)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Ari_changeNumberColorNotification), object: nil, userInfo: [Ari_changeNumberColorKey : randomColor])
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Ari_changeNumberColorNotification), object: nil, userInfo: [Ari_changeNumberColorKey : randomColor])
+            self.clickChangeNumberColor?(randomColor)
         }
     }
 }
