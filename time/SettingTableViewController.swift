@@ -58,6 +58,7 @@ extension SettingTableViewController {
         Debug.Log(indexPath.row)
         if indexPath.row == 0 {
             let randomColor = UIColor.init(red: CGFloat(arc4random_uniform(255)) / 255, green: CGFloat(arc4random_uniform(255)) / 255, blue: CGFloat(arc4random_uniform(255)) / 255, alpha: 1)
+//            let randomColor = UIColor.init(hue: CGFloat(arc4random_uniform(360)), saturation: CGFloat(arc4random_uniform(100)) / 100, brightness: CGFloat(arc4random_uniform(100)) / 100, alpha: 1)
 //            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Ari_changeNumberColorNotification), object: nil, userInfo: [Ari_changeNumberColorKey : randomColor])
             self.clickChangeNumberColor?(randomColor)
         }
